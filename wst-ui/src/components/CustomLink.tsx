@@ -22,7 +22,7 @@ export default function CustomLink({ children, shouldMatchExactURL = false, ...r
   return (
     <Link {...rest}>
       {cloneElement(children, {
-        color: isSelectedLink ? 'inboxPurpleTint.900' : 'inboxBlueTint.900',
+        color: isSelectedLink ? 'wstBlue.800' : 'wstBlue.900',
       })}
     </Link>
   );
