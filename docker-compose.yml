@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nodejs-server:
+    build:
+      context: ./wst-api
+    ports:
+      - '3080:3080'
+    container_name: wst-api
+    volumes:
+      - ./wst-api:/usr/src/app/wst-api
+      - /usr/src/app/wst-api/node_modules
+  react-ui:
+    build:
+      context: ./wst-ui
+    ports:
+      - '3000:3000'
+    container_name: wst-ui
+    stdin_open: true
+    volumes:
+      - ./wst-ui:/usr/src/app/wst-ui
+      - /usr/src/app/wst-ui/node_modules
