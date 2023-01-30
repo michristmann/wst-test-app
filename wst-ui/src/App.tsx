@@ -5,7 +5,7 @@ import { defaultTheme } from './styles/default';
 function App() {
   return (
     <ChakraProvider theme={defaultTheme}>
-      <h1>Hello World!</h1>
+      <h1>Hello World!!</h1>
     </ChakraProvider>
   );
 }
