@@ -4,9 +4,9 @@ export class Sample {
   state: string;
   ph: number;
   conductivity: number;
-  tubidity: number;
+  turbidity: number;
   dbo: number;
-  qdo: number;
+  dqo: number;
   fe: number;
   mg: number;
   ca: number;

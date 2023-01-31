@@ -18,7 +18,7 @@ export const defaultTheme = extendTheme({
     global: {
       '#root': { h: '100vh', display: 'flex', flexDirection: 'column' },
       body: {
-        bg: '#efefef',
+        bg: '#FFFFFF',
         color: '#FFFFFF',
         h: '100vh',
       },

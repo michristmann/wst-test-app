@@ -1,14 +1,14 @@
 import { Navigate, Route, Routes as ReactRoutes } from 'react-router-dom';
 
-import Home from '../pages/home';
+import SampleSubmissions from '../pages/sample-submissions';
 
 export default function Routes() {
   return (
     <ReactRoutes>
-      <Route path="home" element={<Home />} />
+      <Route path="sample-submissions" element={<SampleSubmissions />} />
       {/* <Route path="send-sample" element={<SendSample />} /> */}
 
-      <Route path="/*" element={<Navigate to="home" replace />} />
+      <Route path="/*" element={<Navigate to="sample-submissions" replace />} />
     </ReactRoutes>
   );
 }
