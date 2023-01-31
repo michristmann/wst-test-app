@@ -23,7 +23,7 @@ export default function SampleSubmissions() {
       <Box>
         <VStack alignItems="center">
           {data.map(sample => (
-            <CustomDropdown {...sample} />
+            <CustomDropdown {...sample} key={`sample-id-${sample.id}`} />
           ))}
         </VStack>
       </Box>

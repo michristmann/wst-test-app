@@ -11,8 +11,8 @@ export default function InfoCard(sample: SampleProps) {
       <DropdownContentRow label="pH" value={sample.ph} />
       <DropdownContentRow label="Condutividade" value={sample.conductivity} unity="μS/cm" />
       <DropdownContentRow label="Turbidez" value={sample.turbidity} unity="UNT" />
-      <DropdownContentRow label="DBO" value={sample.dbo} unity="mg de O/L" />
-      <DropdownContentRow label="DQO" value={sample.dqo} unity="mg de O/L" />
+      <DropdownContentRow label="DBO" value={sample.dbo} unity="mg/L" />
+      <DropdownContentRow label="DQO" value={sample.dqo} unity="mg/L" />
       <DropdownContentRow label="Ferro" value={sample.fe} unity="mg/L" />
       <DropdownContentRow label="Manganês" value={sample.mg} unity="mg/L" />
       <DropdownContentRow label="Cálcio" value={sample.ca} unity="mg/L" isLastItem />
