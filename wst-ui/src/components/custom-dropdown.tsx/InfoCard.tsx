@@ -5,7 +5,7 @@ import { SampleProps } from '.';
 
 export default function InfoCard(sample: SampleProps) {
   return (
-    <VStack color="wstBlue.900" bgColor="#FFF" py={2} px={4} w="100%">
+    <VStack color="wstBlue.900" bgColor="#FFF" py={4} px={12} w="100%" borderBottomRadius={8}>
       <DropdownContentRow label="Cidade" value={sample.city} />
       <DropdownContentRow label="Estado" value={sample.state} />
       <DropdownContentRow label="pH" value={sample.ph} />

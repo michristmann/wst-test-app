@@ -11,7 +11,7 @@ interface DropdownRowProps {
 
 export default function DropdownRow({ rowTitle, isOpen, onToggle }: DropdownRowProps) {
   return (
-    <Flex direction="column" width="100%">
+    <Flex direction="column" width="100%" bgColor="#fff" borderTopRadius={8} borderBottomRadius={isOpen ? 0 : 8}>
       <Flex alignItems="center" cursor="pointer" h="52px" onClick={onToggle} userSelect="none">
         <Flex mx={4} h={5} w={5} alignItems="center" justifyContent=" center">
           {isOpen ? (

@@ -6,7 +6,7 @@ export default function Routes() {
   return (
     <ReactRoutes>
       <Route path="sample-submissions" element={<SampleSubmissions />} />
-      {/* <Route path="send-sample" element={<SendSample />} /> */}
+      <Route path="send-sample" element={<SampleSubmissions />} />
 
       <Route path="/*" element={<Navigate to="sample-submissions" replace />} />
     </ReactRoutes>

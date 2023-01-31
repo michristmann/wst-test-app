@@ -15,6 +15,7 @@ export default function SampleSubmissions() {
       pt={2}
       pb={8}
       px={4}
+      borderRadius={4}
     >
       <Text color="wstBlue.900" fontSize={20} pt={2.5}>
         Amostras enviadas:
