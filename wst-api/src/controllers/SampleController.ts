@@ -14,18 +14,20 @@ export default class SampleController {
   }
 
   static async create(req: Request, res: Response) {
-    const sampleData = req.body;
+    const { payload: sampleData } = req.body;
     const requiredFields = ['cidade', 'estado', 'ph', 'condutividade', 'turbidez', 'dbo', 'dqo', 'fe', 'mg', 'ca'];
-    const sampleDataAttributes = Object.keys(sampleData);
-    const hasAllRequiredFields = requiredFields.every(key =>
-      sampleDataAttributes.map(att => att.toLowerCase()).includes(key),
-    );
+    const lowerCasedKeysSample = Object.keys(sampleData).reduce((acc, key) => {
+      acc[key.toLowerCase()] = sampleData[key];
+      return acc;
+    }, {});
+    const sampleDataAttributes = Object.keys(lowerCasedKeysSample);
+    const hasAllRequiredFields = requiredFields.every(key => sampleDataAttributes.includes(key));
 
     if (!hasAllRequiredFields) {
-      return res.status(400).send({ error: 'Missing Required fields' });
+      return res.status(400).send({ error: 'Missing Required Fields' });
     }
 
-    const sample = new Sample({ ...sampleData });
+    const sample = new Sample({ ...lowerCasedKeysSample });
 
     try {
       sample.save();

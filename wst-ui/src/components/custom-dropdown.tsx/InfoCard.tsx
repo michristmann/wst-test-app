@@ -14,7 +14,7 @@ export default function InfoCard(sample: Sample) {
       <DropdownContentRow label="DBO" value={sample.dbo} unity="mg/L" />
       <DropdownContentRow label="DQO" value={sample.dqo} unity="mg/L" />
       <DropdownContentRow label="Ferro" value={sample.fe} unity="mg/L" />
-      <DropdownContentRow label="Manganês" value={sample.mg} unity="mg/L" />
+      <DropdownContentRow label="Magnésio" value={sample.mg} unity="mg/L" />
       <DropdownContentRow label="Cálcio" value={sample.ca} unity="mg/L" isLastItem />
     </VStack>
   );

@@ -18,9 +18,6 @@ export default function SampleSubmissions() {
     loadSamples();
   }, []);
 
-  const datas = samples.map(sample => new Date(sample.createdAt).toLocaleString(undefined, { dateStyle: 'long' }));
-  console.log(datas);
-
   return (
     <Grid
       layerStyle={LayerStyleVariant.DEFAULT_PAGE_CONTENT_BOX}

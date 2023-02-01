@@ -1,6 +1,6 @@
 import { api } from '..';
 
-export interface CreateSampleProps {
+export interface SampleProps {
   cidade: string;
   estado: string;
   ph: number;
@@ -13,9 +13,10 @@ export interface CreateSampleProps {
   ca: number;
 }
 
-const createSample = async (payload: CreateSampleProps) => {
+const createSample = async (payload: SampleProps) => {
   try {
-    const response = await api.post('/samples', { sample: payload });
+    const response = await api.post('/samples', { payload });
+
     return response.data;
   } catch (error) {
     return undefined;
