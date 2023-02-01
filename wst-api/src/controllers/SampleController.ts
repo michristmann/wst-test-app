@@ -15,7 +15,7 @@ export default class SampleController {
 
   static async create(req: Request, res: Response) {
     const sampleData = req.body;
-    const requiredFields = ['cidade', 'estado', 'ph', 'condutividade', 'dbo', 'dqo', 'fe', 'mg', 'ca'];
+    const requiredFields = ['cidade', 'estado', 'ph', 'condutividade', 'turbidez', 'dbo', 'dqo', 'fe', 'mg', 'ca'];
     const sampleDataAttributes = Object.keys(sampleData);
     const hasAllRequiredFields = requiredFields.every(key =>
       sampleDataAttributes.map(att => att.toLowerCase()).includes(key),
@@ -27,15 +27,13 @@ export default class SampleController {
 
     const sample = new Sample({ ...sampleData });
 
-    sample
-      .save()
-      .then(sample => {
-        res.status(201).send({
-          message: `Success. Sample ${sample.id} saved in the data base`,
-        });
-      })
-      .catch(err => {
-        res.status(400).send({ error: 'There was an error while saving the data' });
+    try {
+      sample.save();
+      res.status(201).send({
+        sample,
       });
+    } catch (error) {
+      res.status(400).send({ error: 'There was an error while saving the data' });
+    }
   }
 }

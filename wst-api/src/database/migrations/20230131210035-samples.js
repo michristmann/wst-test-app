@@ -5,16 +5,16 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('samples', {
       id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
+        type: Sequelize.DataTypes.UUID,
+        defaultValue: Sequelize.DataTypes.UUID,
         allowNull: false,
+        primaryKey: true,
       },
-      city: {
+      cidade: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      state: {
+      estado: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -22,11 +22,11 @@ module.exports = {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
-      conductivity: {
+      condutividade: {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
-      turbidity: {
+      turbidez: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

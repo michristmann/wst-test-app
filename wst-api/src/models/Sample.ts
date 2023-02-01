@@ -3,10 +3,11 @@ import sequelize from '../database/index';
 
 export default class Sample extends Model {
   public id: number;
-  public city: string;
-  public state: string;
+  public cidade: string;
+  public estado: string;
   public ph: number;
-  public conductivity: number;
+  public condutividade: number;
+  public turbidez: number;
   public dbo: number;
   public dqo: number;
   public fe: number;
@@ -17,13 +18,13 @@ export default class Sample extends Model {
 Sample.init(
   {
     id: {
-      type: DataTypes.INTEGER,
-      defaultValue: DataTypes.INTEGER,
+      type: DataTypes.UUIDV4,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       allowNull: false,
     },
-    city: DataTypes.STRING,
-    state: DataTypes.STRING,
+    cidade: DataTypes.STRING,
+    estado: DataTypes.STRING,
     ph: {
       type: DataTypes.DECIMAL,
       get() {
@@ -32,14 +33,14 @@ Sample.init(
         return value === null ? null : parseFloat(value);
       },
     },
-    conductivity: {
+    condutividade: {
       type: DataTypes.DECIMAL,
       get() {
-        const value = this.getDataValue('conductivity');
+        const value = this.getDataValue('condutividade');
         return value === null ? null : parseFloat(value);
       },
     },
-    turbidity: DataTypes.INTEGER,
+    turbidez: DataTypes.INTEGER,
     dbo: {
       type: DataTypes.DECIMAL,
       get() {
