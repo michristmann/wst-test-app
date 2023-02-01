@@ -32,6 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://wst-api:3080",
   "eslintConfig": {
     "extends": [
       "react-app",
