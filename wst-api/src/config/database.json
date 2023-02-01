@@ -1,0 +1,12 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "wst-test-api",
+    "host": "localhost",
+    "dialect": "postgres",
+    "define": {
+      "timestamps": true
+    }
+  }
+}
