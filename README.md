@@ -67,3 +67,15 @@ To stop the Docker services, run:
 ```
 docker-compose stop
 ```
+
+#
+
+## Usage
+
+After initializing the application, go to the [upload file page](http://localhost:3000/send-sample), and use the mocked tables - `project mocked-tables folder` - to run some tests.
+
+The app will convert the `.xlsx` documents, turn it into a JSON and send it to the backend API. Then the api will validade JSON object, comparing it's object keys and fiedls (values and types) with the `Sample Model`.
+
+- On success, a code `201` will be sent, and the file content will be displayed in the [index file page](http://localhost:3000/sample-submissions), and;
+
+- Failing to save the data, there will be a code `400` informing the error on you browser console.
