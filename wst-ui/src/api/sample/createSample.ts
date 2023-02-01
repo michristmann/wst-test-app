@@ -18,7 +18,7 @@ const createSample = async (payload: CreateSampleProps) => {
     const response = await api.post('/samples', { sample: payload });
     return response.data;
   } catch (error) {
-    return { message: 'Error creating sample' };
+    return undefined;
   }
 };
 

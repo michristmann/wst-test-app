@@ -12,6 +12,7 @@ export interface Sample {
   fe: number;
   mg: number;
   ca: number;
+  createdAt: string;
 }
 
 const getSamples = async () => {
@@ -19,7 +20,7 @@ const getSamples = async () => {
     const response = await api.get<Sample[]>('/samples');
     return response.data;
   } catch (error) {
-    return { message: 'Error fetching samples' };
+    return undefined;
   }
 };
 

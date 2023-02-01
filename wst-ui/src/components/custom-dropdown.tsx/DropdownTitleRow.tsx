@@ -5,15 +5,23 @@ import { ReactComponent as ChevronRightIcon } from '../../assets/chevron-right.s
 
 interface DropdownRowProps {
   rowTitle: string;
+  submissionDate: string;
   isOpen: boolean;
   onToggle: () => void;
 }
 
-export default function DropdownRow({ rowTitle, isOpen, onToggle }: DropdownRowProps) {
+export default function DropdownRow({ rowTitle, isOpen, submissionDate, onToggle }: DropdownRowProps) {
   return (
-    <Flex direction="column" width="100%" bgColor="#fff" borderTopRadius={8} borderBottomRadius={isOpen ? 0 : 8}>
+    <Flex
+      width="100%"
+      bgColor="#fff"
+      alignItems="center"
+      justifyContent="space-between"
+      borderTopRadius={8}
+      borderBottomRadius={isOpen ? 0 : 8}
+    >
       <Flex alignItems="center" cursor="pointer" h="52px" onClick={onToggle} userSelect="none">
-        <Flex mx={4} h={5} w={5} alignItems="center" justifyContent=" center">
+        <Flex mx={4} h={5} w={5} justifyContent=" center">
           {isOpen ? (
             <ChevronDownIcon width={20} height={20} fill="wstBlue.900" />
           ) : (
@@ -24,6 +32,9 @@ export default function DropdownRow({ rowTitle, isOpen, onToggle }: DropdownRowP
           {rowTitle}
         </Text>
       </Flex>
+      <Text mr={5} fontSize={14} fontWeight={600} color="wstBlue.900">
+        {`Enviada em: ${submissionDate}`}
+      </Text>
     </Flex>
   );
 }
