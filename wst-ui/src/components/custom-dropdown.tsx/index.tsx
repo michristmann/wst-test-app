@@ -1,22 +1,10 @@
 import { Flex, useDisclosure } from '@chakra-ui/react';
+
 import DropdownTitleRow from './DropdownTitleRow';
+import { Sample } from '../../api/sample/getSamples';
 import InfoCard from './InfoCard';
 
-export interface SampleProps {
-  id: number;
-  city: string;
-  state: string;
-  ph: number;
-  conductivity: number;
-  turbidity: number;
-  dbo: number;
-  dqo: number;
-  fe: number;
-  mg: number;
-  ca: number;
-}
-
-export default function CustomDropdown(sample: SampleProps) {
+export default function CustomDropdown(sample: Sample) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
