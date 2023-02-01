@@ -47,25 +47,6 @@ export default function SendSample() {
             Enviar
           </Button>
         </HStack>
-        {/* {submitSuccess && (
-          <Alert
-            status="success"
-            variant="subtle"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            textAlign="center"
-            height="200px"
-            border="1px"
-            borderColor="#38a169"
-            borderRadius={8}
-          >
-            <AlertIcon boxSize="40px" mr={0} />
-            <AlertTitle mt={4} mb={1} fontSize="lg" color="#2D3748">
-              Envio Realizado com sucesso!
-            </AlertTitle>
-          </Alert>
-        )} */}
       </VStack>
 
       <Box color="wstBlue.900" fontSize={20} pt={2.5}>
