@@ -20,6 +20,8 @@ docker run --name wst -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 
 #### `Create the Database`
 
+Open the api folder - `wst-api` - in a Integrated Terminal and run the following two lines:
+
 ```
 npx sequelize:db
 ```
