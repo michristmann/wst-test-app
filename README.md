@@ -2,50 +2,15 @@
 
 To run this application it's crucial to have [Docker](https://www.docker.com/) installed and running in your machine!
 
-## Docker Setup
-
-<!-- To set up the PostgresSQL database that this project requires, run, in your console, the command lines bellow:
-
-#### `Get Official Postgres Docker Image`
-
-```
-docker pull postgres
-```
-
-#### `Set the Master Password and Run`
-
-```
-docker run --name wst -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
-``` -->
-
-<!--
-#### `Create the Database`
-
-Open the api folder - `wst-api` - in a Integrated Terminal and run the following two lines:
-
-```
-npx squelize db:create
-```
-
-#### `Run Migrations`
-
-```
-npx sequelize db:migrate
-``` -->
-
 Now, in the project directory, to test the app, run the following command lines:
 
-#### `Build with no Cache`
+#### `Build & Start the Services`
 
 ```
-docker-compose build --no-cache
+docker-compose up --build
 ```
 
-#### `Start the Services`
-
-```
-docker-compose up
-```
+##### `Note: Sometimes the database is created after the migration code, which will trigger an Database Connection Error. In this case, run the command line above a second time!`
 
 Once the Docker `services` are running, open [localhost](http://localhost:3000) to view it in the browser.
 
@@ -81,4 +46,4 @@ The app will convert the `.xlsx` documents, turn it into a JSON and send it to t
 
 - On success, a code `201` will be sent, and the file content will be displayed in the [index file page](http://localhost:3000/sample-submissions), and;
 
-- Failing to save the data, there will be a code `400` informing the error on you browser console.
+- Failing to save the data, there will be a code `400` informing the error on you browser console and screen.

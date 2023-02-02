@@ -1,5 +1,13 @@
 version: '3'
 services:
+  db:
+    container_name: db
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: wst-test-api
+
   nodejs-server:
     build:
       context: ./wst-api
@@ -9,14 +17,7 @@ services:
     volumes:
       - ./wst-api:/usr/src/app/wst-api
       - /usr/src/app/wst-api/node_modules
-    command: sh -c "cd wst-api/src && npx sequelize db:create --config config/database.json && npx sequelize db:migrate"
-
-  db:
-    image: postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: wst-test-api
+    command: sh -c "cd /usr/src/app/wst-api/src && npx sequelize db:migrate --config config/database.json && npm run dev"
 
   react-ui:
     build:
