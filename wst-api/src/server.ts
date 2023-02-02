@@ -24,7 +24,7 @@ class Server {
 const app: Application = express();
 const server: Server = new Server(app);
 const port = 3080;
-const host = 'localhost';
+const host = '0.0.0.0';
 
 app
   .get('/', function (_, response) {

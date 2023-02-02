@@ -23,7 +23,11 @@ export default function SendSample() {
   };
 
   const onFormSubmit = async () => {
-    await SamplesAPI.createSample(fileData!);
+    try {
+      await SamplesAPI.createSample(fileData!);
+    } catch (error) {
+      alert('Houve um erro no upload do documento, revise a formatação!');
+    }
   };
 
   return (

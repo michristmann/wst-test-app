@@ -7,9 +7,9 @@ export default class SampleController {
   static async index(req: Request, res: Response) {
     try {
       const samples = await Sample.findAll();
-      res.json(samples);
+      return res.json(samples);
     } catch (error) {
-      res.status(404).send({ error: 'Failed to fetch data' });
+      return res.status(404).send({ error: 'Failed to fetch data' });
     }
   }
 
@@ -22,7 +22,6 @@ export default class SampleController {
     }, {});
     const sampleDataAttributes = Object.keys(lowerCasedKeysSample);
     const hasAllRequiredFields = requiredFields.every(key => sampleDataAttributes.includes(key));
-
     if (!hasAllRequiredFields) {
       return res.status(400).send({ error: 'Missing Required Fields' });
     }
@@ -30,12 +29,14 @@ export default class SampleController {
     const sample = new Sample({ ...lowerCasedKeysSample });
 
     try {
-      sample.save();
-      res.status(201).send({
+      await sample.save();
+      return res.status(201).send({
         sample,
       });
     } catch (error) {
-      res.status(400).send({ error: 'There was an error while saving the data' });
+      console.log('error', sample);
+
+      return res.status(400).send({ error: 'There was an error while saving the data' });
     }
   }
 }

@@ -14,13 +14,9 @@ export interface SampleProps {
 }
 
 const createSample = async (payload: SampleProps) => {
-  try {
-    const response = await api.post('/samples', { payload });
+  const response = await api.post('/samples', { payload });
 
-    return response.data;
-  } catch (error) {
-    return undefined;
-  }
+  return response.data;
 };
 
 export default createSample;

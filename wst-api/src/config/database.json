@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "postgres",
     "database": "wst-test-api",
-    "host": "localhost",
+    "host": "db",
     "dialect": "postgres",
     "define": {
       "timestamps": true
