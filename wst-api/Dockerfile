@@ -6,9 +6,7 @@ COPY package*.json ./
 
 RUN npm install
 
-RUN npx sequelize db:create
-
-RUN npx sequelize db:migrate
+COPY . .
 
 EXPOSE 3080
 

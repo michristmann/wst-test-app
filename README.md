@@ -4,7 +4,7 @@ To run this application it's crucial to have [Docker](https://www.docker.com/) i
 
 ## Docker Setup
 
-To set up the PostgresSQL database that this project requires, run, in your console, the command lines bellow:
+<!-- To set up the PostgresSQL database that this project requires, run, in your console, the command lines bellow:
 
 #### `Get Official Postgres Docker Image`
 
@@ -16,7 +16,7 @@ docker pull postgres
 
 ```
 docker run --name wst -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
-```
+``` -->
 
 <!--
 #### `Create the Database`
